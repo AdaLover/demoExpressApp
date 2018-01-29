@@ -21,13 +21,13 @@ app.get("/Contact", (req, rew) => {
   rew.render("Contact");
 });
 app.post("/Contact/send", (req, rew) => {
-  let transporter = nodemailer.createTransport({
+  let transporter = nodemailer.createTestAccount({
     service: "Gmail",
-    auth: { user: "rrraja83@gmail.com", pass: "W1R@L@S5" }
+    auth: { user: "rrraja83@gmail.com", pass: "123456" }
   });
   let mailOptions = {
     from: "Raja raghav <rrraja83@gmail.com>",
-    to: "raja_raghav@hotmail.com",
+    to: "support@gmail.com",
     subject: "Web sub",
     body:
       "please help me do this... Name:" +
@@ -37,7 +37,7 @@ app.post("/Contact/send", (req, rew) => {
       "Message:" +
       req.body.message,
     html:
-      "<p>please help me do this... </p><ul><li>" +
+      "<ul><p>please help me do this... </p></ul><li>" +
       req.body.name +
       "</li>" +
       "<li>" +
@@ -45,17 +45,8 @@ app.post("/Contact/send", (req, rew) => {
       "</li>" +
       "<li>" +
       req.body.message +
-      "</li></ul>"
+      "</li>"
   };
-  transporter.sendMail(mailOptions, (err, info) => {
-    if (err) {
-      console.log("error", err);
-      rew.redirect("/");
-    } else {
-      console.log("error", info.response);
-      rew.redirect("/");
-    }
-  });
 });
 app.listen(5000);
 console.log("server running on port 5000.");

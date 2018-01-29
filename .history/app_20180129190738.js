@@ -21,13 +21,13 @@ app.get("/Contact", (req, rew) => {
   rew.render("Contact");
 });
 app.post("/Contact/send", (req, rew) => {
-  let transporter = nodemailer.createTransport({
+  let transporter = nodemailer.createTestAccount({
     service: "Gmail",
-    auth: { user: "rrraja83@gmail.com", pass: "W1R@L@S5" }
+    auth: { user: "rrraja83@gmail.com", pass: "w1r@l@s5" }
   });
   let mailOptions = {
     from: "Raja raghav <rrraja83@gmail.com>",
-    to: "raja_raghav@hotmail.com",
+    to: "support@gmail.com",
     subject: "Web sub",
     body:
       "please help me do this... Name:" +

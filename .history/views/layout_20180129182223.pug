@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    title Jumbotron Template for Bootstrap
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand(href="/") HealthBar
+        #navbar
+            button.btn.btn-success() 
+             a(href="about") About
+    block content  
+    hr
+    footer
+     p(class='text-center') © 2016 HealthBar, Inc.
+

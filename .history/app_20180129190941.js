@@ -27,7 +27,7 @@ app.post("/Contact/send", (req, rew) => {
   });
   let mailOptions = {
     from: "Raja raghav <rrraja83@gmail.com>",
-    to: "raja_raghav@hotmail.com",
+    to: "support@gmail.com",
     subject: "Web sub",
     body:
       "please help me do this... Name:" +
